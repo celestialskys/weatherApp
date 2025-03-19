@@ -1,4 +1,8 @@
-class UsersController > ApplicationController
+class Api::UsersController < ApplicationController
+  def index
+    @users = User.all
+    render :index
+  end
 
   def show
     @user = User.find(params[:id])
@@ -15,14 +19,13 @@ class UsersController > ApplicationController
     else
       redirect_back(fallback_location: root_path)
     end
-
-  end 
+  end
 
   def create
     @user = User.new(params[:user])
     if @user.save
       redirect_to @user_path
-    else 
+    else
       render "new"
     end
   end
@@ -37,5 +40,4 @@ class UsersController > ApplicationController
      redirect_back(fallback_location: root_path)
     end
   end
-
 end

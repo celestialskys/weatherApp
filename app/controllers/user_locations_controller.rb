@@ -1,8 +1,8 @@
-class UserLocationsController > ApplicationController
+class Api::UserLocationsController < ApplicationController
   def unassign_location
     user_location = UserLocation.find(params[:location_id, :user_id])
     if user_location.destroy
-      redirect_to :index_path 
+      redirect_to :index_path
     else
       render :location_change_error_page
     end

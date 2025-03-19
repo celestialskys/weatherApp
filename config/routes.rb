@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   delete "user_locations#unassign_location"
   get "user_locations#location"
   update "user_locations#assign_location"
-  
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest

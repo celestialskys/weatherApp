@@ -10,27 +10,5 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_08_220332) do
-  create_table "locations", force: :cascade do |t|
-    t.string "name"
-    t.string "country"
-    t.string "region"
-    t.string "zip"
-    t.string "lat"
-    t.string "lon"
-    t.string "timezone_id"
-  end
-
-  create_table "user_locations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "location_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname", default: "", null: false
-    t.integer "preferred_location_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema[8.0].define(version: 0) do
 end
